@@ -5,11 +5,11 @@ const { Server } = require("socket.io");
 const numCPUs = require("os").cpus().length;
 const { setupMaster, setupWorker } = require("@socket.io/sticky");
 const { createAdapter, setupPrimary } = require("@socket.io/cluster-adapter");
-const socketMain = require('./socketMain.js')
-const dotenv = require('dotenv');
+const socketMain = require("./socketMain.js");
+const dotenv = require("dotenv");
 dotenv.config();
-const port = process.env.PORT || 3000
-const base_url = process.env.BASE_URL
+const port = process.env.PORT || 3000;
+const base_url = process.env.BASE_URL;
 if (cluster.isPrimary) {
   console.log(`Master ${process.pid} is running`);
 
